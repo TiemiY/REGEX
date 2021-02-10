@@ -1,0 +1,38 @@
+body {
+    font-family: Quicksand;
+}
+
+ul{
+    padding: 0.5rem;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+}
+
+.container {
+    margin: 1.5rem;
+}
+
+.title {
+    margin-bottom: 0.5rem;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.description {
+    margin-left: 0.5rem;
+}
+
+.word {
+    color: #777;
+}
+
+#expressions_title{
+    font-weight: bold;
+}
+
+.expressions,
+.notes {
+    margin: 0.5rem 0 0.5rem 2rem;
+    /* margin-bottom: 0.5rem;
+    margin-left: 1.5rem; */
+}
