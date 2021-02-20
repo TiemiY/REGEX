@@ -1,64 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
-    <link rel="stylesheet" href="regex.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand:300,500"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="regex.css" />
     <title>REGEX</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="title">REGEX: Regular Expressions</div>
-        <div class="description">
-            REGEX is a pattern of characters that you can use to check a string.
-            A sequence of characters that defines a search pattern. 
-            <sup><a href="https://en.wikipedia.org/wiki/Regular_expression">[1]</a></sup> 
-        </div>
-        <ul>
-            <span class="title">Syntax Summary</span>
-            <li class="expressions">^<span class="word">regex</span>: starts with</li> 
-            <li class="expressions"><span class="word">regex</span>$: ends with</li>
-            <li class="expressions"><span class="word">regex</span>?: zero or 1 match {0,1}</li>
-            <li class="expressions"><span class="word">regex</span>*: zero or more matches {0,∞}</li>
-            <li class="expressions"><span class="word">regex</span>+: 1 or more matches {1,∞}</li> 
-            <li class="expressions"><span class="word">regex</span>{number}: number of times</li>
-            <li class="expressions">[<span class="word">regex</span>]: provides a range construct.</li>
-            <li class="expressions">(<span class="word">regex</span>): groups patterns</li>
-            <li class="expressions">[^<span class="word">regex</span>]: "not" it will not seach for the pattern </li>            
-        </ul>
-        <ul>
-            <span class="title">Shortcuts</span>
-            <li class="expressions">[a-z]: all lowercase alphabet</li>
-            <li class="expressions">[A-Z]: all uppercase alphabet</li>
-            <li class="expressions">[:alpha:]: any letter (lowercase or uppercase)</li>
-            <li class="expressions">[0-9] or \d or [:digit:]: all numbers</li>
-            <li class="expressions">[a-zA-Z0-9] or \w: all lower and capital alphabet and numbers</li>
-            <li class="expressions">\W: only special characters</li> 
-            <li class="expressions">\b: border, indicates the limit of the search</li>   
-            <li class="expressions">. : dot means any character</li>
-            <li class="expressions">\ : back-slash means escape used in case of special characters</li>
-            <li class="expressions">| : pipe means or</li>
-        </ul>
-        <ul>
-            <span class="title"></span>
-            <li class="notes">sed: it is necessary to escape some characters: {} | ()</li>
-            <li class="notes">[^] = "not" </li>
-            <li class="notes">Lara princesa</li>
-            <li class="notes">Flock lord</li>
-            <li class="notes">Mimi fluffy</li>
-            <li>Coxinha lindo</li>
-            <li>Batman fofinho</li>
-            <li>Zé é muito fofinho</li>
-	    <li>Bob é filhote</li>
-         </ul>        
-
+      <div class="title">REGEX: Regular Expressions</div>
+      <div class="description">
+        REGEX is a pattern of characters that you can use to check a string. A
+        sequence of characters that defines a search pattern.
+        <sup
+          ><a href="https://en.wikipedia.org/wiki/Regular_expression"
+            >[1]</a
+          ></sup
+        >
+      </div>
+      <ul>
+        <span class="title">Syntax Summary</span>
+        <li class="expressions">
+          ^<span class="word">regex</span>: starts with
+        </li>
+        <li class="expressions"><span class="word">regex</span>$: ends with</li>
+        <li class="expressions">
+          <span class="word">regex</span>?: zero or 1 match {0,1}
+        </li>
+        <li class="expressions">
+          <span class="word">regex</span>*: zero or more matches {0,∞}
+        </li>
+        <li class="expressions">
+          <span class="word">regex</span>+: 1 or more matches {1,∞}
+        </li>
+        <li class="expressions">
+          <span class="word">regex</span>{number}: number of times
+        </li>
+        <li class="expressions">
+          [<span class="word">regex</span>]: provides a range construct.
+        </li>
+        <li class="expressions">
+          (<span class="word">regex</span>): groups patterns
+        </li>
+        <li class="expressions">
+          [^<span class="word">regex</span>]: "not" it will not seach for the
+          pattern
+        </li>
+      </ul>
+      <ul>
+        <span class="title">Shortcuts</span>
+        <li class="expressions">[a-z]: all lowercase alphabet</li>
+        <li class="expressions">[A-Z]: all uppercase alphabet</li>
+        <li class="expressions">
+          [:alpha:]: any letter (lowercase or uppercase)
+        </li>
+        <li class="expressions">[0-9] or \d or [:digit:]: all numbers</li>
+        <li class="expressions">
+          [a-zA-Z0-9] or \w: all lower and capital alphabet and numbers
+        </li>
+        <li class="expressions">\W: only special characters</li>
+        <li class="expressions">
+          \b: border, indicates the limit of the search
+        </li>
+        <li class="expressions">. : dot means any character</li>
+        <li class="expressions">
+          \ : back-slash means escape used in case of special characters
+        </li>
+        <li class="expressions">| : pipe means or</li>
+      </ul>
+      <ul>
+        <span class="title">Notes</span>
+        <li class="notes">Each command has its particularity in REGEX</li>
+        <li class="notes">
+          sed: it is necessary to escape some characters: {} | ()
+        </li>
+        <li class="notes">grep, sed: \number (when there are groups it is possible to use back-reference)</li>
+      </ul>
     </div>
-    <div> &lt;texto&gt; </div>
+    
     <!-- 
-    //back-reference \number 
-    sensitive or insensitive -consider or not capital and lower cases 
+        <div>&lt;texto&gt;</div> 
     // shortcuts:
         // [a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]+ (example of e-mail validation without special characters) 
         // (?:)
@@ -66,5 +92,5 @@
         // (?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%*&]{,])[a-zA-Z0-9!@#$%*&]{,}
     -->
     <script src="regex.js"></script>
-</body>
+  </body>
 </html>
